@@ -1,9 +1,7 @@
 import express from 'express';
 import cors from 'cors';
-import dotenv from 'dotenv';
+import { connectDB } from './config/db.js'
 
-//Cargamos las variables de entorno desde .env
-dotenv.config();
 
 //Creamos la app de express:
 const app = express();
@@ -20,7 +18,18 @@ app.get('/Aida', (req, res ) => {
   res.json({ message: 'Guapa 😘'});
 });
 
-//Arranacar el servidor
-app.listen(PORT, () => {
-  console.log(`Servidor arrancado en el puerto👌😉 ${PORT}`)
-});
+//Conectar a l BD y arrancar el servidor
+
+async function startServer() {
+  try {
+    await connectDB();
+    
+    app.listen(PORT, () => {
+      console.log(`Servidor arrancado en el puerto👌😉 ${PORT}`)
+    });
+  } catch (error) {
+    console.error('No se puedo iniciar el servidor 🥲', error.message);
+  }
+}
+
+startServer()

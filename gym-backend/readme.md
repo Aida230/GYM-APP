@@ -22,4 +22,6 @@ Pasos para crear el backend:
 8. Crear archivo .gitignore:
       ejemplo: node_modules
               .env
-9. 
+9. Crear el archivo de configuración de la base de datos
+        crear carpeta config dentro de src y añadir el archivo db.js
+10. Añadir la conexion de la base de datos al archivo index.js
