@@ -25,3 +25,5 @@ Pasos para crear el backend:
 9. Crear el archivo de configuración de la base de datos
         crear carpeta config dentro de src y añadir el archivo db.js
 10. Añadir la conexion de la base de datos al archivo index.js
+11. Crear la carpet models y el archivo con el modelo de la rutina de ejercicios
+12. crear los controladores y las rutas
